@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinates</title>
+    <style>
+        body{
+            background-color: black;
+            overflow: heddien;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+            margin-bottom: 4px;
+            border-radius: 4px;
+        }
+
+        .unspecial {
+            background-color: sandybrown;
+        }
+        .special {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>""
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="unspecial"></div>
+    <div class="special"></div>
+    <div></div>
+    <div></div>
+    <script>
+        const special = document.querySelector('.special');//special이라 요소를 special변수에 지정
+        special.addEventListener('click', (event) => { //special 변수에 eventListener를 추가 클릭이되면 우리가 등록한 함수호출
+            const rect = special.getBoundingClientRect(); //함수를 호출해서 rect에 지정
+            console.log(rect);
+            console.log(`client: ${event.clientX}, ${event.clientY}`);
+            console.log(`page: ${event.pageX}, ${event.pageY}`);
+        });
+        const unspecial = document.querySelector('.unspecial');
+        unspecial.addEventListener('click', (event) => {
+            const rect = unspecial.getBoundingClientRect();
+            console.log(rect);
+            console.log(`client: ${event.clientX}, ${event.clientY}`);
+            console.log(`page: ${event.pageX}, ${event.pageY}`);
+        });
+    </script>
+</body>
+</html>

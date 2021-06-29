@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      body {
+        background-color: black;
+        text-align: center;
+      }
+      section {
+        width: 50%;
+        margin: 50px auto;
+        background-color: brown;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      img {
+        z-index: 100;
+        will-change: opacity;
+      }
+      h1,
+      h3,
+      span {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="img/avatar.png" alt="avatar" />
+      <h1 id="brand">Dream Coding</h1>
+      <h3>Don't forget to code your dream</h3>
+    </section>
+    <span>Hello World!</span>
+  </body>
+  <script>
+    const section = document.querySelector('section');
+    const h2 = document.createElement('h2'); //요소를 만듬 
+    h2.setAttribute('class','title') // <h2 class="title"></h2>
+    h2.textContent= "This is Korea"; // <h2 class="title">This is Korea</h2>
+    const h3 = document.querySelector('h3');
+    //section.appendChild(h2); // 제일 마지막에 추가
+    section.insertBefore(h2, h3); // 후자 앞에 추가 
+
+
+    //동적할당
+    /*
+    section.innerHTML=`
+      <img src= "img/avatar.png" alt="avatar" />
+      <h1 id="brand">Dream Coding</h1>
+    `;
+    */
+  </script>
+</html>
